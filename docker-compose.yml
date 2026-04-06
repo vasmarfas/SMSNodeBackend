@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: smsnode-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-smsnode}
+      POSTGRES_USER: ${POSTGRES_USER:-smsnode}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-smsnode}
+    ports:
+      - "${DB_PORT_EXTERNAL:-127.0.0.1:5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  backend:
+    image: ${DOCKER_IMAGE:-ghcr.io/your_github_username/smsnodebackend:latest}
+    build: .
+    container_name: smsnode-backend
+    depends_on:
+      - db
+    ports:
+      - "${API_PORT:-8000}:8000"
+    environment:
+      # Core API / DB settings (can point either to internal "db" or external Postgres)
+      - POSTGRES_HOST=${POSTGRES_HOST:-db}
+      - POSTGRES_PORT=${POSTGRES_PORT:-5432}
+      - POSTGRES_DB=${POSTGRES_DB:-smsnode}
+      - POSTGRES_USER=${POSTGRES_USER:-smsnode}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-smsnode}
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_SECRET_KEY=${API_SECRET_KEY}
+
+      # Bot and gateway settings
+      - BOT_TOKEN=${BOT_TOKEN}
+      - GOIP_IP=${GOIP_IP}
+      - GOIP_LOGIN=${GOIP_LOGIN}
+      - GOIP_PASSWORD=${GOIP_PASSWORD}
+      - ADMIN_ID=${ADMIN_ID}
+      - RSCHS_CHAT_ID=${RSCHS_CHAT_ID:-0}
+      - MAX_CHANNELS=${MAX_CHANNELS:-8}
+      - MINI_APP_URL=${MINI_APP_URL}
+      - REGISTRATION_MODE=${REGISTRATION_MODE:-open}
+      
+      # Demo Mode
+      - IS_DEMO=${IS_DEMO:-False}
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:
