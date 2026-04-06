@@ -55,7 +55,7 @@ docker compose up -d --build
 **Вариант Б: Готовый образ из GHCR**
 Если вы не хотите собирать образ локально (или у вас слабый сервер), раскомментируйте строку `DOCKER_IMAGE` в `.env` и укажите путь к образу:
 ```env
-DOCKER_IMAGE=ghcr.io/ВАШ_GITHUB_USERNAME/smsnodebackend:latest
+DOCKER_IMAGE=ghcr.io/vasmarfas/smsnodebackend:latest
 ```
 После этого запустите:
 ```bash

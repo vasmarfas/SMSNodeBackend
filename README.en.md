@@ -56,7 +56,7 @@ docker compose up -d --build
 **Option B: Use pre-built GHCR image**
 If you want to skip the local build process, uncomment the `DOCKER_IMAGE` line in `.env` and point it to your registry:
 ```env
-DOCKER_IMAGE=ghcr.io/YOUR_GITHUB_USERNAME/smsnodebackend:latest
+DOCKER_IMAGE=ghcr.io/vasmarfas/smsnodebackend:latest
 ```
 Then run:
 ```bash

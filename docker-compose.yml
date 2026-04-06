@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
 
   backend:
-    image: ${DOCKER_IMAGE:-ghcr.io/your_github_username/smsnodebackend:latest}
+    image: ${DOCKER_IMAGE:-ghcr.io/vasmarfas/smsnodebackend:latest}
     build: .
     container_name: smsnode-backend
     depends_on:
