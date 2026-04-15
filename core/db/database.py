@@ -84,6 +84,7 @@ async def ensure_database_exists() -> None:
             user=settings.POSTGRES_USER,
             password=settings.POSTGRES_PASSWORD,
             database="postgres",
+            timeout=5
         )
         row = await conn.fetchval(
             "SELECT 1 FROM pg_database WHERE datname = $1",
@@ -95,14 +96,10 @@ async def ensure_database_exists() -> None:
         else:
             logger.debug("База данных %s уже существует.", settings.POSTGRES_DB)
     except Exception as e:
-        logger.error(
-            "Не удалось подключиться к PostgreSQL или создать базу %s: %s. "
-            "Убедитесь, что: 1) PostgreSQL запущен; 2) в .env верно указаны POSTGRES_HOST, POSTGRES_PORT, POSTGRES_USER, POSTGRES_PASSWORD; "
-            "3) пользователь имеет право CREATEDB (если базы ещё нет).",
-            settings.POSTGRES_DB,
-            e,
+        logger.warning(
+            "Не удалось подключиться к базе 'postgres' для проверки/создания %s. "
+            "Возможно, база уже существует (ошибка: %s)", settings.POSTGRES_DB, e
         )
-        raise
     finally:
         if conn:
             await conn.close()

@@ -56,6 +56,10 @@ class Settings(BaseSettings):
     # Демо-режим: запрет на изменения (read-only), автоматическое создание демо-данных
     IS_DEMO: bool = False
 
+    # HTTP/SOCKS прокси для Telegram
+    # Например: http://user:pass@12.34.56.78:8000
+    TG_PROXY: str = ""
+
 
     def get_registration_mode(self) -> str:
         """Текущий режим (open/closed/semi_open). По умолчанию из env."""

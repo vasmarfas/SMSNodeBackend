@@ -35,6 +35,7 @@ services:
 
       # Bot and gateway settings
       - BOT_TOKEN=${BOT_TOKEN}
+      - TG_PROXY=${TG_PROXY:-}
       - GOIP_IP=${GOIP_IP}
       - GOIP_LOGIN=${GOIP_LOGIN}
       - GOIP_PASSWORD=${GOIP_PASSWORD}
