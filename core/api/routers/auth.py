@@ -1,6 +1,6 @@
 """
 Роутер авторизации: /auth/token, /auth/register, /auth/me, /auth/telegram
-Режим регистрации: open / closed / semi_open (конфиг или админка).
+Режим регистрации: open / closed / semi_open (конфиг или админ-панели).
 """
 
 import hashlib
@@ -178,7 +178,7 @@ async def register(
 ):
     """
     Регистрация нового пользователя.
-    Режим задаётся в .env (REGISTRATION_MODE) или в админке.
+    Режим задаётся в .env (REGISTRATION_MODE) или в админ-панели.
     - open: создаётся пользователь (первый — admin).
     - closed: 403, учётку создаёт только админ.
     - semi_open: создаётся заявка (202), после одобрения админом — учётка.

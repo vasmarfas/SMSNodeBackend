@@ -4,7 +4,7 @@
 - open: кто угодно может зарегистрироваться (бот /start или API /auth/register)
 - closed: только создание учётки админом или по приглашению
 - semi_open: можно подать заявку; учётку создаёт админ после одобрения
-Режим задаётся в .env (REGISTRATION_MODE) или переопределяется в админке (system_settings).
+Режим задаётся в .env (REGISTRATION_MODE) или переопределяется в админ-панели (system_settings).
 """
 
 from sqlalchemy import select
@@ -31,7 +31,7 @@ async def get_registration_mode(session: AsyncSession) -> str:
 
 
 async def set_registration_mode(session: AsyncSession, mode: str) -> None:
-    """Установить режим регистрации из админки (open/closed/semi_open)."""
+    """Установить режим регистрации из админ-панели (open/closed/semi_open)."""
     mode = (mode or "").strip().lower()
     if mode not in VALID_MODES:
         mode = "open"

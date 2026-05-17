@@ -73,7 +73,7 @@ def _build_gateways_keyboard(gateways: list[Gateway]) -> InlineKeyboardMarkup:
         InlineKeyboardButton(text="🔄 Обновить статусы", callback_data="gw_refresh_all"),
     ])
     buttons.append([
-        InlineKeyboardButton(text="◀ В админку", callback_data="admin_back"),
+        InlineKeyboardButton(text="◀ В админ-панель", callback_data="admin_back"),
     ])
 
     return InlineKeyboardMarkup(inline_keyboard=buttons)
@@ -95,7 +95,7 @@ def _build_gateway_actions_keyboard(gw_id: int) -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="🔍 Обнаруженные каналы", callback_data=f"gw_discovered:{gw_id}"),
         ],
         [
-            InlineKeyboardButton(text="🏠 В админку", callback_data="admin_back"),
+            InlineKeyboardButton(text="🏠 В админ-панель", callback_data="admin_back"),
         ]
     ])
 

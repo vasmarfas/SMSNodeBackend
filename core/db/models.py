@@ -269,7 +269,7 @@ class PendingRegistration(Base):
 
 
 class SystemSetting(Base):
-    """Ключ-значение настроек (в т.ч. переопределение режима регистрации из админки)."""
+    """Ключ-значение настроек (в т.ч. переопределение режима регистрации из админ-панели)."""
     __tablename__ = "system_settings"
 
     key: Mapped[str] = mapped_column(String(100), primary_key=True)
