@@ -96,3 +96,9 @@ pytest tests/
 ```
 
 Some tests are skipped unless `RUN_API_TESTS` is set.
+
+## Disclaimer
+
+This software was developed for educational and research purposes as part of a graduation thesis and is provided "as is", without warranties of any kind, express or implied. The author is not liable for any direct or indirect damage arising from the use of, or inability to use, the software.
+
+All responsibility for operating the system, for the connected equipment and SIM cards, and for the content and legality of the messages sent rests solely with the operator running the system. Any unlawful use is prohibited, including messaging without recipients' consent, spam and unsolicited advertising, fraud, caller-ID spoofing, and circumventing carrier requirements or applicable law. By using the software, the user confirms that they act at their own risk and accept these terms; if they disagree, they must stop using it.
