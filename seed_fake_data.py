@@ -1,8 +1,10 @@
 import asyncio
-import random
-from datetime import datetime, timedelta, timezone
+import json
+import re
+from datetime import datetime, timezone
+from pathlib import Path
 
-from sqlalchemy import select, insert
+from sqlalchemy import select, insert, text
 from core.db.database import AsyncSessionLocal
 from core.db.models import (
     User, Gateway, SimCard, Contact, ContactGroup,
@@ -11,185 +13,130 @@ from core.db.models import (
 )
 from core.api.auth import get_password_hash
 
+DATA_PATH = Path(__file__).resolve().parent / "core" / "demo" / "demo_seed_data.json"
+
+# Таблицы с serial-id, чьи sequence нужно поправить после вставки с явными id.
+_SEQ_TABLES = ["users", "gateways", "sim_cards", "contacts", "contact_groups", "sms_templates", "messages"]
+
+
+def _parse_dt(value: str) -> datetime:
+    """Разбирает таймстемп из дампа ('2026-03-30 20:00:00+00'), нормализуя смещение."""
+    s = value.strip().replace(" ", "T")
+    if re.search(r"[+-]\d{2}$", s):
+        s += ":00"
+    return datetime.fromisoformat(s)
+
+
 async def seed_demo_data():
+    data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
+
+    # Сдвигаем все даты так, чтобы самое свежее сообщение оказалось "сейчас",
+    # сохраняя относительные интервалы внутри диалогов.
+    offset = datetime.now(timezone.utc) - _parse_dt(data["anchor"])
+
     async with AsyncSessionLocal() as session:
-        # 1. Admin
-        res_admin = await session.execute(select(User).where(User.username == "admin"))
-        admin_user = res_admin.scalars().first()
-        if not admin_user:
-            print("Создаём пользователя admin (admin:admin)…")
-            admin_user = User(
-                username="admin",
-                role=RoleEnum.ADMIN,
-                hashed_password=get_password_hash("admin"),
-                is_active=True
+        if (await session.execute(select(User).limit(1))).scalars().first():
+            print("Демо-данные уже присутствуют, пропускаю.")
+            return
+
+        print("Разворачиваем демо-данные…")
+
+        for u in data["users"]:
+            session.add(User(
+                id=u["id"],
+                username=u["username"],
+                hashed_password=get_password_hash(u["password"]),
+                role=RoleEnum[u["role"]],
+                is_active=u["is_active"],
+            ))
+
+        for g in data["gateways"]:
+            session.add(Gateway(
+                id=g["id"],
+                name=g["name"],
+                type=GatewayTypeEnum[g["type"]],
+                host=g["host"],
+                port=g["port"],
+                username=g["username"],
+                password=g["password"],
+                is_active=g["is_active"],
+                last_seen=datetime.now(timezone.utc),
+                last_status=g.get("last_status"),
+            ))
+
+        for s in data["sim_cards"]:
+            session.add(SimCard(
+                id=s["id"],
+                gateway_id=s["gateway_id"],
+                port_number=s["port_number"],
+                phone_number=s.get("phone_number"),
+                imei=s.get("imei"),
+                iccid=s.get("iccid"),
+                operator=s.get("operator"),
+                balance=s.get("balance"),
+                status=s["status"],
+                label=s.get("label"),
+                assigned_user_id=s.get("assigned_user_id"),
+            ))
+
+        for c in data["contacts"]:
+            session.add(Contact(
+                id=c["id"],
+                user_id=c["user_id"],
+                phone_number=c["phone_number"],
+                name=c["name"],
+            ))
+
+        for grp in data["contact_groups"]:
+            session.add(ContactGroup(id=grp["id"], user_id=grp["user_id"], name=grp["name"]))
+
+        for t in data["templates"]:
+            session.add(SMSTemplate(
+                id=t["id"],
+                name=t["name"],
+                content=t["content"],
+                category=t["category"],
+                is_global=t["is_global"],
+                user_id=t.get("user_id"),
+            ))
+
+        # Группы и контакты должны существовать до записей в таблице связей.
+        await session.flush()
+
+        for m in data["contact_group_members"]:
+            await session.execute(
+                insert(contact_group_members).values(group_id=m["group_id"], contact_id=m["contact_id"])
             )
-            session.add(admin_user)
-            await session.commit()
-            await session.refresh(admin_user)
 
-        # 2. Demo User
-        res_demo = await session.execute(select(User).where(User.username == "demo"))
-        demo_user = res_demo.scalars().first()
-        if not demo_user:
-            print("Создаём пользователя demo (demo:demo)…")
-            demo_user = User(
-                username="demo",
-                role=RoleEnum.USER,
-                hashed_password=get_password_hash("demo"),
-                is_active=True
-            )
-            session.add(demo_user)
-            await session.commit()
-            await session.refresh(demo_user)
-
-        users = [admin_user, demo_user]
-
-        # 3. Gateways
-        gateways = []
-        for i in range(1, 4):
-            gw_name = f"Mock-Gateway-{i}"
-            res = await session.execute(select(Gateway).where(Gateway.name == gw_name))
-            gw = res.scalars().first()
-            if not gw:
-                gw = Gateway(
-                    name=gw_name,
-                    type=GatewayTypeEnum.GOIP_UDP if i < 3 else GatewayTypeEnum.SKYLINE,
-                    host=f"192.168.10.{100+i}",
-                    port=9991 if i < 3 else 80,
-                    username="admin",
-                    password="password",
-                    is_active=True,
-                    last_seen=datetime.now(timezone.utc),
-                    last_status="ONLINE"
-                )
-                session.add(gw)
-                await session.flush()
-            gateways.append(gw)
-        await session.commit()
-
-        # 4. SIM Cards
-        for gw in gateways:
-            for port in range(1, 5):
-                phone = f"+7999{random.randint(100, 999)}{random.randint(1000, 9999)}"
-                res = await session.execute(select(SimCard).where(SimCard.gateway_id == gw.id, SimCard.port_number == port))
-                sim = res.scalars().first()
-                if not sim:
-                    sim = SimCard(
-                        gateway_id=gw.id,
-                        port_number=port,
-                        phone_number=phone,
-                        status="IDLE",
-                        label=f"Work {port}" if port % 2 == 0 else f"Reserve {port}",
-                        # Assign SIMs randomly to demo or admin
-                        assigned_user_id=random.choice(users).id,
-                        balance=random.uniform(50.0, 500.0)
-                    )
-                    session.add(sim)
-                    await session.flush()
-        await session.commit()
-
-        # Generate fake data for both admin and demo
-        fake_names_ru = ["Иван Иванов", "Петр Петров", "Елена Смирнова", "Анна Козлова"]
-        fake_names_en = ["John Doe", "Jane Smith", "Michael Johnson", "Emily Davis"]
-        
-        all_contacts = []
-        
-        for u in users:
-            # 5. Contacts (mixed RU/EN)
-            user_contacts = []
-            names = fake_names_ru + fake_names_en
-            for name in names:
-                phone = f"+7900{random.randint(100, 999)}{random.randint(1000, 9999)}"
-                res = await session.execute(select(Contact).where(Contact.user_id == u.id, Contact.name == name))
-                c = res.scalars().first()
-                if not c:
-                    c = Contact(
-                        user_id=u.id,
-                        name=name,
-                        phone_number=phone
-                    )
-                    session.add(c)
-                    await session.flush()
-                user_contacts.append(c)
-                all_contacts.append(c)
-
-            # 6. Groups
-            group_names = ["VIP Клиенты", "VIP Clients", "Colleagues", "Сотрудники"]
-            for g_name in group_names:
-                res = await session.execute(select(ContactGroup).where(ContactGroup.user_id == u.id, ContactGroup.name == g_name))
-                g = res.scalars().first()
-                if not g:
-                    g = ContactGroup(user_id=u.id, name=g_name)
-                    session.add(g)
-                    await session.flush()
-                    g_contacts = random.sample(user_contacts, k=random.randint(2, 4))
-                    for gc in g_contacts:
-                        await session.execute(insert(contact_group_members).values(group_id=g.id, contact_id=gc.id))
-
-            # 7. Templates
-            templates_data = [
-                ("Приветствие", "Привет! Это демо-сообщение.", "marketing"),
-                ("Greeting", "Hello! This is a demo message.", "marketing"),
-                ("Оплата", "Ваш счет оплачен.", "billing"),
-                ("Payment", "Your invoice has been paid.", "billing"),
-            ]
-            for t_name, t_content, category in templates_data:
-                res = await session.execute(select(SMSTemplate).where(SMSTemplate.user_id == u.id, SMSTemplate.name == t_name))
-                if not res.scalars().first():
-                    t = SMSTemplate(user_id=u.id, name=t_name, content=t_content, category=category)
-                    session.add(t)
+        for msg in data["messages"]:
+            created = _parse_dt(msg["created_at"]) + offset
+            updated = _parse_dt(msg["updated_at"]) + offset if msg.get("updated_at") else created
+            session.add(Message(
+                id=msg["id"],
+                sim_card_id=msg.get("sim_card_id"),
+                external_phone=msg["external_phone"],
+                direction=MessageDirectionEnum[msg["direction"]],
+                text=msg["text"],
+                status=MessageStatusEnum[msg["status"]],
+                error_text=msg.get("error_text"),
+                created_at=created,
+                updated_at=updated,
+                gateway_task_id=msg.get("gateway_task_id"),
+            ))
 
         await session.commit()
 
-        # 8. Messages
-        # Check if messages already exist to avoid spamming on every start
-        res_msgs = await session.execute(select(Message).limit(1))
-        if not res_msgs.scalars().first():
-            print("Генерация сообщений…")
-            message_texts = [
-                "Привет! Как дела?",
-                "Hello! How are you?",
-                "Ваш заказ готов к выдаче.",
-                "Your order is ready.",
-                "Скидка 20%!",
-                "20% discount!",
-                "Код подтверждения: 459812",
-                "Verification code: 123456"
-            ]
+        # После вставки с явными id sequence остаётся на нуле — выставляем на максимум,
+        # иначе регистрация новых пользователей/сообщений упрётся в конфликт ключей.
+        for table in _SEQ_TABLES:
+            await session.execute(text(
+                f"SELECT setval(pg_get_serial_sequence('{table}', 'id'), "
+                f"(SELECT COALESCE(MAX(id), 1) FROM {table}))"
+            ))
+        await session.commit()
 
-            # Re-fetch sims to ensure we have them
-            res_sims = await session.execute(select(SimCard))
-            sims = res_sims.scalars().all()
+        print("Демо-данные успешно развёрнуты.")
 
-            if sims and all_contacts:
-                now = datetime.now(timezone.utc)
-                for i in range(150):
-                    contact = random.choice(all_contacts)
-                    sim = random.choice(sims)
-                    direction = random.choice([MessageDirectionEnum.INCOMING, MessageDirectionEnum.OUTGOING])
-
-                    status = MessageStatusEnum.SENT_OK if direction == MessageDirectionEnum.OUTGOING else MessageStatusEnum.RECEIVED
-                    if direction == MessageDirectionEnum.OUTGOING and random.random() < 0.1:
-                        status = MessageStatusEnum.FAILED
-                    elif direction == MessageDirectionEnum.OUTGOING and random.random() < 0.2:
-                        status = MessageStatusEnum.DELIVERED
-
-                    created_at = now - timedelta(days=random.randint(0, 30), hours=random.randint(0, 24), minutes=random.randint(0, 60))
-
-                    m = Message(
-                        sim_card_id=sim.id,
-                        external_phone=contact.phone_number,
-                        direction=direction,
-                        text=random.choice(message_texts),
-                        status=status,
-                        created_at=created_at,
-                        gateway_task_id=f"mock-job-{i}" if direction == MessageDirectionEnum.OUTGOING else None
-                    )
-                    session.add(m)
-
-                await session.commit()
-        print("Данные успешно сгенерированы.")
 
 if __name__ == "__main__":
     asyncio.run(seed_demo_data())

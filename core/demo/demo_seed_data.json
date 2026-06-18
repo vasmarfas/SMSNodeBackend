@@ -1,0 +1,2328 @@
+{
+  "anchor": "2026-04-11 10:20:00+00",
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "role": "ADMIN",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "username": "demo",
+      "password": "demo",
+      "role": "USER",
+      "is_active": true
+    }
+  ],
+  "gateways": [
+    {
+      "id": 1,
+      "name": "Mock-Gateway-1",
+      "type": "GOIP_UDP",
+      "host": "192.168.10.101",
+      "port": 9991,
+      "username": "admin",
+      "password": "password",
+      "is_active": true,
+      "created_at": "2026-04-15 21:59:20.974967+00",
+      "last_seen": "2026-04-15 21:59:20.994787+00",
+      "last_status": "offline: Ожидание keepalive от GoIP (подождите 5–1"
+    },
+    {
+      "id": 2,
+      "name": "Mock-Gateway-2",
+      "type": "GOIP_UDP",
+      "host": "192.168.10.102",
+      "port": 9991,
+      "username": "admin",
+      "password": "password",
+      "is_active": true,
+      "created_at": "2026-04-15 21:59:20.974967+00",
+      "last_seen": "2026-04-15 21:59:21.001066+00",
+      "last_status": "offline: Ожидание keepalive от GoIP (подождите 5–1"
+    },
+    {
+      "id": 3,
+      "name": "Mock-Gateway-3",
+      "type": "SKYLINE",
+      "host": "192.168.10.103",
+      "port": 80,
+      "username": "admin",
+      "password": "password",
+      "is_active": true,
+      "created_at": "2026-04-15 21:59:20.974967+00",
+      "last_seen": "2026-04-15 21:59:21.006153+00",
+      "last_status": "offline: "
+    }
+  ],
+  "sim_cards": [
+    {
+      "id": 1,
+      "gateway_id": 1,
+      "port_number": 1,
+      "phone_number": "+70000002001",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 399.57147826494383,
+      "status": "IDLE",
+      "label": "Reserve 1",
+      "assigned_user_id": 2
+    },
+    {
+      "id": 2,
+      "gateway_id": 1,
+      "port_number": 2,
+      "phone_number": "+70000002002",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 111.72293335895395,
+      "status": "IDLE",
+      "label": "Work 2",
+      "assigned_user_id": 1
+    },
+    {
+      "id": 3,
+      "gateway_id": 1,
+      "port_number": 3,
+      "phone_number": "+70000002003",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 54.21852203688218,
+      "status": "IDLE",
+      "label": "Reserve 3",
+      "assigned_user_id": 2
+    },
+    {
+      "id": 4,
+      "gateway_id": 1,
+      "port_number": 4,
+      "phone_number": "+70000002004",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 302.3210657692226,
+      "status": "IDLE",
+      "label": "Work 4",
+      "assigned_user_id": 2
+    },
+    {
+      "id": 5,
+      "gateway_id": 2,
+      "port_number": 1,
+      "phone_number": "+70000002005",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 117.82737697789621,
+      "status": "IDLE",
+      "label": "Reserve 1",
+      "assigned_user_id": 1
+    },
+    {
+      "id": 6,
+      "gateway_id": 2,
+      "port_number": 2,
+      "phone_number": "+70000002006",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 445.80140983597124,
+      "status": "IDLE",
+      "label": "Work 2",
+      "assigned_user_id": 2
+    },
+    {
+      "id": 7,
+      "gateway_id": 2,
+      "port_number": 3,
+      "phone_number": "+70000002007",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 225.52800146529617,
+      "status": "IDLE",
+      "label": "Reserve 3",
+      "assigned_user_id": 1
+    },
+    {
+      "id": 8,
+      "gateway_id": 2,
+      "port_number": 4,
+      "phone_number": "+70000002008",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 316.8805924456026,
+      "status": "IDLE",
+      "label": "Work 4",
+      "assigned_user_id": 1
+    },
+    {
+      "id": 9,
+      "gateway_id": 3,
+      "port_number": 1,
+      "phone_number": "+70000002009",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 441.27921435281957,
+      "status": "IDLE",
+      "label": "Reserve 1",
+      "assigned_user_id": 1
+    },
+    {
+      "id": 10,
+      "gateway_id": 3,
+      "port_number": 2,
+      "phone_number": "+70000002010",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 272.0591057497905,
+      "status": "IDLE",
+      "label": "Work 2",
+      "assigned_user_id": 1
+    },
+    {
+      "id": 11,
+      "gateway_id": 3,
+      "port_number": 3,
+      "phone_number": "+70000002011",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 108.08352001229959,
+      "status": "IDLE",
+      "label": "Reserve 3",
+      "assigned_user_id": 1
+    },
+    {
+      "id": 12,
+      "gateway_id": 3,
+      "port_number": 4,
+      "phone_number": "+70000002012",
+      "imei": null,
+      "iccid": null,
+      "operator": null,
+      "balance": 475.9811094820765,
+      "status": "IDLE",
+      "label": "Work 4",
+      "assigned_user_id": 1
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "phone_number": "+70000001001",
+      "name": "Иван Иванов"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "phone_number": "+70000001002",
+      "name": "Петр Петров"
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "phone_number": "+70000001008",
+      "name": "Елена Смирнова"
+    },
+    {
+      "id": 4,
+      "user_id": 1,
+      "phone_number": "+70000001012",
+      "name": "Анна Козлова"
+    },
+    {
+      "id": 5,
+      "user_id": 1,
+      "phone_number": "+70000001003",
+      "name": "John Doe"
+    },
+    {
+      "id": 6,
+      "user_id": 1,
+      "phone_number": "+70000001007",
+      "name": "Jane Smith"
+    },
+    {
+      "id": 7,
+      "user_id": 1,
+      "phone_number": "+70000001010",
+      "name": "Michael Johnson"
+    },
+    {
+      "id": 8,
+      "user_id": 1,
+      "phone_number": "+70000001013",
+      "name": "Emily Davis"
+    },
+    {
+      "id": 9,
+      "user_id": 2,
+      "phone_number": "+70000001009",
+      "name": "Иван Иванов"
+    },
+    {
+      "id": 10,
+      "user_id": 2,
+      "phone_number": "+70000001014",
+      "name": "Петр Петров"
+    },
+    {
+      "id": 11,
+      "user_id": 2,
+      "phone_number": "+70000001015",
+      "name": "Елена Смирнова"
+    },
+    {
+      "id": 12,
+      "user_id": 2,
+      "phone_number": "+70000001016",
+      "name": "Анна Козлова"
+    },
+    {
+      "id": 13,
+      "user_id": 2,
+      "phone_number": "+70000001011",
+      "name": "John Doe"
+    },
+    {
+      "id": 14,
+      "user_id": 2,
+      "phone_number": "+70000001003",
+      "name": "Jane Smith"
+    },
+    {
+      "id": 15,
+      "user_id": 2,
+      "phone_number": "+70000001007",
+      "name": "Michael Johnson"
+    },
+    {
+      "id": 16,
+      "user_id": 2,
+      "phone_number": "+70000001013",
+      "name": "Emily Davis"
+    }
+  ],
+  "contact_groups": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "name": "VIP Клиенты",
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "name": "VIP Clients",
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "name": "Colleagues",
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 4,
+      "user_id": 1,
+      "name": "Сотрудники",
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 5,
+      "user_id": 2,
+      "name": "VIP Клиенты",
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 6,
+      "user_id": 2,
+      "name": "VIP Clients",
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 7,
+      "user_id": 2,
+      "name": "Colleagues",
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 8,
+      "user_id": 2,
+      "name": "Сотрудники",
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    }
+  ],
+  "contact_group_members": [
+    {
+      "group_id": 1,
+      "contact_id": 3
+    },
+    {
+      "group_id": 1,
+      "contact_id": 5
+    },
+    {
+      "group_id": 1,
+      "contact_id": 2
+    },
+    {
+      "group_id": 1,
+      "contact_id": 7
+    },
+    {
+      "group_id": 2,
+      "contact_id": 6
+    },
+    {
+      "group_id": 2,
+      "contact_id": 7
+    },
+    {
+      "group_id": 2,
+      "contact_id": 2
+    },
+    {
+      "group_id": 3,
+      "contact_id": 6
+    },
+    {
+      "group_id": 3,
+      "contact_id": 2
+    },
+    {
+      "group_id": 3,
+      "contact_id": 7
+    },
+    {
+      "group_id": 3,
+      "contact_id": 1
+    },
+    {
+      "group_id": 4,
+      "contact_id": 6
+    },
+    {
+      "group_id": 4,
+      "contact_id": 1
+    },
+    {
+      "group_id": 4,
+      "contact_id": 5
+    },
+    {
+      "group_id": 4,
+      "contact_id": 4
+    },
+    {
+      "group_id": 5,
+      "contact_id": 11
+    },
+    {
+      "group_id": 5,
+      "contact_id": 15
+    },
+    {
+      "group_id": 5,
+      "contact_id": 13
+    },
+    {
+      "group_id": 5,
+      "contact_id": 14
+    },
+    {
+      "group_id": 6,
+      "contact_id": 15
+    },
+    {
+      "group_id": 6,
+      "contact_id": 16
+    },
+    {
+      "group_id": 6,
+      "contact_id": 9
+    },
+    {
+      "group_id": 6,
+      "contact_id": 10
+    },
+    {
+      "group_id": 7,
+      "contact_id": 14
+    },
+    {
+      "group_id": 7,
+      "contact_id": 11
+    },
+    {
+      "group_id": 7,
+      "contact_id": 15
+    },
+    {
+      "group_id": 7,
+      "contact_id": 10
+    },
+    {
+      "group_id": 8,
+      "contact_id": 12
+    },
+    {
+      "group_id": 8,
+      "contact_id": 14
+    },
+    {
+      "group_id": 8,
+      "contact_id": 9
+    }
+  ],
+  "templates": [
+    {
+      "id": 1,
+      "name": "Приветствие",
+      "content": "Привет! Это демо-сообщение.",
+      "category": "marketing",
+      "is_global": false,
+      "user_id": 1,
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 2,
+      "name": "Greeting",
+      "content": "Hello! This is a demo message.",
+      "category": "marketing",
+      "is_global": false,
+      "user_id": 1,
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 3,
+      "name": "Оплата",
+      "content": "Ваш счет оплачен.",
+      "category": "billing",
+      "is_global": false,
+      "user_id": 1,
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 4,
+      "name": "Payment",
+      "content": "Your invoice has been paid.",
+      "category": "billing",
+      "is_global": false,
+      "user_id": 1,
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 5,
+      "name": "Приветствие",
+      "content": "Привет! Это демо-сообщение.",
+      "category": "marketing",
+      "is_global": false,
+      "user_id": 2,
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 6,
+      "name": "Greeting",
+      "content": "Hello! This is a demo message.",
+      "category": "marketing",
+      "is_global": false,
+      "user_id": 2,
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 7,
+      "name": "Оплата",
+      "content": "Ваш счет оплачен.",
+      "category": "billing",
+      "is_global": false,
+      "user_id": 2,
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    },
+    {
+      "id": 8,
+      "name": "Payment",
+      "content": "Your invoice has been paid.",
+      "category": "billing",
+      "is_global": false,
+      "user_id": 2,
+      "created_at": "2026-04-15 21:59:21.179277+00"
+    }
+  ],
+  "messages": [
+    {
+      "id": 102,
+      "sim_card_id": 11,
+      "external_phone": "+70000001011",
+      "direction": "INCOMING",
+      "text": "Just placed my order! Got a great deal on the jacket.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-30 20:00:00+00",
+      "updated_at": "2026-03-30 20:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 12,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "INCOMING",
+      "text": "Отзыв оставил, поставил 5 звёзд. Буду заказывать ещё!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-30 09:00:00+00",
+      "updated_at": "2026-03-30 09:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 13,
+      "sim_card_id": 5,
+      "external_phone": "+70000001002",
+      "direction": "OUTGOING",
+      "text": "Здравствуйте! Ваша заявка №7723 принята в обработку.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-17 10:00:00+00",
+      "updated_at": "2026-03-17 10:00:00+00",
+      "gateway_task_id": "job-d2-1"
+    },
+    {
+      "id": 15,
+      "sim_card_id": 5,
+      "external_phone": "+70000001002",
+      "direction": "OUTGOING",
+      "text": "Обычно подтверждение приходит в течение 1 рабочего дня.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-17 10:35:00+00",
+      "updated_at": "2026-03-17 10:35:00+00",
+      "gateway_task_id": "job-d2-2"
+    },
+    {
+      "id": 16,
+      "sim_card_id": 5,
+      "external_phone": "+70000001002",
+      "direction": "OUTGOING",
+      "text": "Ваша заявка подтверждена! Счёт №А-00781 выставлен на оплату.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-18 09:00:00+00",
+      "updated_at": "2026-03-18 09:00:00+00",
+      "gateway_task_id": "job-d2-3"
+    },
+    {
+      "id": 17,
+      "sim_card_id": 5,
+      "external_phone": "+70000001002",
+      "direction": "INCOMING",
+      "text": "Получил счёт, оплачу сегодня.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-18 11:00:00+00",
+      "updated_at": "2026-03-18 11:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 18,
+      "sim_card_id": 5,
+      "external_phone": "+70000001002",
+      "direction": "OUTGOING",
+      "text": "Оплата получена, спасибо! Услуга будет активирована в течение часа.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-18 14:00:00+00",
+      "updated_at": "2026-03-18 14:00:00+00",
+      "gateway_task_id": "job-d2-4"
+    },
+    {
+      "id": 19,
+      "sim_card_id": 5,
+      "external_phone": "+70000001002",
+      "direction": "INCOMING",
+      "text": "Отлично, всё заработало. Спасибо за быстрое обслуживание!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-18 15:10:00+00",
+      "updated_at": "2026-03-18 15:10:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 20,
+      "sim_card_id": 5,
+      "external_phone": "+70000001002",
+      "direction": "OUTGOING",
+      "text": "Рады помочь! Напоминаем — следующий платёж 18 апреля.",
+      "status": "SENT_OK",
+      "error_text": null,
+      "created_at": "2026-03-18 15:30:00+00",
+      "updated_at": "2026-03-18 15:30:00+00",
+      "gateway_task_id": "job-d2-5"
+    },
+    {
+      "id": 21,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "OUTGOING",
+      "text": "Hello! This is a reminder about your appointment tomorrow at 10am.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-17 14:00:00+00",
+      "updated_at": "2026-03-17 14:00:00+00",
+      "gateway_task_id": "job-d3-1"
+    },
+    {
+      "id": 22,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "INCOMING",
+      "text": "Thanks for the reminder! Is the 10am slot still available?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-17 14:30:00+00",
+      "updated_at": "2026-03-17 14:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 23,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "OUTGOING",
+      "text": "Yes, the 10am slot is confirmed for you. Please arrive 5 minutes early.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-17 14:45:00+00",
+      "updated_at": "2026-03-17 14:45:00+00",
+      "gateway_task_id": "job-d3-2"
+    },
+    {
+      "id": 24,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "INCOMING",
+      "text": "Perfect, I will be there. Do I need to bring any documents?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-17 15:00:00+00",
+      "updated_at": "2026-03-17 15:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 25,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "OUTGOING",
+      "text": "Just bring your ID and insurance card. See you tomorrow!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-17 15:15:00+00",
+      "updated_at": "2026-03-17 15:15:00+00",
+      "gateway_task_id": "job-d3-3"
+    },
+    {
+      "id": 26,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "INCOMING",
+      "text": "Got it, thank you! One more question — is parking available?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-17 15:30:00+00",
+      "updated_at": "2026-03-17 15:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 27,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "OUTGOING",
+      "text": "Yes, free parking is available right next to our building.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-17 15:45:00+00",
+      "updated_at": "2026-03-17 15:45:00+00",
+      "gateway_task_id": "job-d3-4"
+    },
+    {
+      "id": 28,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "INCOMING",
+      "text": "Great, see you at 10am then!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-18 09:00:00+00",
+      "updated_at": "2026-03-18 09:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 29,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "OUTGOING",
+      "text": "Your appointment is complete. Thank you for visiting us!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-18 11:30:00+00",
+      "updated_at": "2026-03-18 11:30:00+00",
+      "gateway_task_id": "job-d3-5"
+    },
+    {
+      "id": 30,
+      "sim_card_id": 7,
+      "external_phone": "+70000001003",
+      "direction": "INCOMING",
+      "text": "Thank you! I will book again next month.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-18 12:00:00+00",
+      "updated_at": "2026-03-18 12:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 57,
+      "sim_card_id": 8,
+      "external_phone": "+70000001007",
+      "direction": "INCOMING",
+      "text": "Hey! Long time no talk. How have you been?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-26 12:00:00+00",
+      "updated_at": "2026-03-26 12:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 58,
+      "sim_card_id": 8,
+      "external_phone": "+70000001007",
+      "direction": "OUTGOING",
+      "text": "Hey! I have been good, pretty busy lately. How about you?",
+      "status": "SENT_OK",
+      "error_text": null,
+      "created_at": "2026-03-26 12:30:00+00",
+      "updated_at": "2026-03-26 12:30:00+00",
+      "gateway_task_id": "job-d7-1"
+    },
+    {
+      "id": 59,
+      "sim_card_id": 8,
+      "external_phone": "+70000001007",
+      "direction": "INCOMING",
+      "text": "Same here! Are you free this weekend?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-26 12:45:00+00",
+      "updated_at": "2026-03-26 12:45:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 60,
+      "sim_card_id": 8,
+      "external_phone": "+70000001007",
+      "direction": "OUTGOING",
+      "text": "Saturday works for me. Want to grab coffee around noon?",
+      "status": "SENT_OK",
+      "error_text": null,
+      "created_at": "2026-03-26 13:00:00+00",
+      "updated_at": "2026-03-26 13:00:00+00",
+      "gateway_task_id": "job-d7-2"
+    },
+    {
+      "id": 61,
+      "sim_card_id": 8,
+      "external_phone": "+70000001007",
+      "direction": "INCOMING",
+      "text": "Sounds great! The usual place?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-26 13:15:00+00",
+      "updated_at": "2026-03-26 13:15:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 62,
+      "sim_card_id": 8,
+      "external_phone": "+70000001007",
+      "direction": "OUTGOING",
+      "text": "Yes, the coffee shop on Pushkin Street. See you at 12!",
+      "status": "SENT_OK",
+      "error_text": null,
+      "created_at": "2026-03-26 13:20:00+00",
+      "updated_at": "2026-03-26 13:20:00+00",
+      "gateway_task_id": "job-d7-3"
+    },
+    {
+      "id": 63,
+      "sim_card_id": 8,
+      "external_phone": "+70000001007",
+      "direction": "INCOMING",
+      "text": "Perfect! Looking forward to it.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-26 13:25:00+00",
+      "updated_at": "2026-03-26 13:25:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 64,
+      "sim_card_id": 8,
+      "external_phone": "+70000001007",
+      "direction": "INCOMING",
+      "text": "Hey, just wanted to say thanks again for your help last week!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-04 10:00:00+00",
+      "updated_at": "2026-04-04 10:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 77,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "OUTGOING",
+      "text": "Здравствуйте! Напоминаем о записи на завтра в 11:00 по адресу ул. Мира, 3.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-19 16:00:00+00",
+      "updated_at": "2026-03-19 16:00:00+00",
+      "gateway_task_id": "job-d9-1"
+    },
+    {
+      "id": 78,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "INCOMING",
+      "text": "Спасибо за напоминание! Подтверждаю визит.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-19 16:30:00+00",
+      "updated_at": "2026-03-19 16:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 80,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "OUTGOING",
+      "text": "Конечно! Время изменено на 12:00, ждём вас.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-20 09:20:00+00",
+      "updated_at": "2026-03-20 09:20:00+00",
+      "gateway_task_id": "job-d9-2"
+    },
+    {
+      "id": 81,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "OUTGOING",
+      "text": "Напоминаем: встреча сегодня в 12:00. До встречи!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-20 10:00:00+00",
+      "updated_at": "2026-03-20 10:00:00+00",
+      "gateway_task_id": "job-d9-3"
+    },
+    {
+      "id": 82,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "INCOMING",
+      "text": "Уже выехал, буду вовремя.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-20 11:30:00+00",
+      "updated_at": "2026-03-20 11:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 83,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "OUTGOING",
+      "text": "Отлично! Ждём вас на ресепшене.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-20 11:35:00+00",
+      "updated_at": "2026-03-20 11:35:00+00",
+      "gateway_task_id": "job-d9-4"
+    },
+    {
+      "id": 84,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "OUTGOING",
+      "text": "Хотим напомнить о следующей встрече — 3 апреля в 10:00.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-02 15:00:00+00",
+      "updated_at": "2026-04-02 15:00:00+00",
+      "gateway_task_id": "job-d9-5"
+    },
+    {
+      "id": 85,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "INCOMING",
+      "text": "Подтверждаю! Кстати, нужно ли что-то подготовить заранее?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-02 15:30:00+00",
+      "updated_at": "2026-04-02 15:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 86,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "OUTGOING",
+      "text": "Возьмите с собой паспорт и распечатанный договор.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-02 15:45:00+00",
+      "updated_at": "2026-04-02 15:45:00+00",
+      "gateway_task_id": "job-d9-6"
+    },
+    {
+      "id": 87,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "INCOMING",
+      "text": "Понял, всё подготовлю. Спасибо!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-02 16:00:00+00",
+      "updated_at": "2026-04-02 16:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 88,
+      "sim_card_id": 10,
+      "external_phone": "+70000001010",
+      "direction": "OUTGOING",
+      "text": "Hi! Your order #3309 has been shipped. Tracking: EM449821RU.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-23 10:00:00+00",
+      "updated_at": "2026-03-23 10:00:00+00",
+      "gateway_task_id": "job-d10-1"
+    },
+    {
+      "id": 89,
+      "sim_card_id": 10,
+      "external_phone": "+70000001010",
+      "direction": "INCOMING",
+      "text": "Thanks! When is the expected delivery date?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-23 10:30:00+00",
+      "updated_at": "2026-03-23 10:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 90,
+      "sim_card_id": 10,
+      "external_phone": "+70000001010",
+      "direction": "OUTGOING",
+      "text": "Expected delivery is March 25th, between 10am and 6pm.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-23 10:45:00+00",
+      "updated_at": "2026-03-23 10:45:00+00",
+      "gateway_task_id": "job-d10-2"
+    },
+    {
+      "id": 91,
+      "sim_card_id": 10,
+      "external_phone": "+70000001010",
+      "direction": "INCOMING",
+      "text": "Great! Will I receive a call before delivery?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-23 11:00:00+00",
+      "updated_at": "2026-03-23 11:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 92,
+      "sim_card_id": 10,
+      "external_phone": "+70000001010",
+      "direction": "OUTGOING",
+      "text": "Yes, our courier will call you 30 minutes before arrival.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-23 11:15:00+00",
+      "updated_at": "2026-03-23 11:15:00+00",
+      "gateway_task_id": "job-d10-3"
+    },
+    {
+      "id": 93,
+      "sim_card_id": 10,
+      "external_phone": "+70000001010",
+      "direction": "INCOMING",
+      "text": "Your shipment has arrived at the local sorting center.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-24 08:00:00+00",
+      "updated_at": "2026-03-24 08:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 94,
+      "sim_card_id": 10,
+      "external_phone": "+70000001010",
+      "direction": "OUTGOING",
+      "text": "Your order is out for delivery today. Expected by 6pm.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-25 09:00:00+00",
+      "updated_at": "2026-03-25 09:00:00+00",
+      "gateway_task_id": "job-d10-4"
+    },
+    {
+      "id": 95,
+      "sim_card_id": 10,
+      "external_phone": "+70000001010",
+      "direction": "INCOMING",
+      "text": "Package received, everything looks great. Thank you!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-25 14:00:00+00",
+      "updated_at": "2026-03-25 14:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 96,
+      "sim_card_id": 10,
+      "external_phone": "+70000001010",
+      "direction": "OUTGOING",
+      "text": "Glad to hear that! Please leave us a review if you have a moment.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-25 14:30:00+00",
+      "updated_at": "2026-03-25 14:30:00+00",
+      "gateway_task_id": "job-d10-5"
+    },
+    {
+      "id": 97,
+      "sim_card_id": 11,
+      "external_phone": "+70000001011",
+      "direction": "OUTGOING",
+      "text": "Hi! Our biggest sale of the year starts tomorrow — up to 50% off!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-27 10:00:00+00",
+      "updated_at": "2026-03-27 10:00:00+00",
+      "gateway_task_id": "job-d11-1"
+    },
+    {
+      "id": 98,
+      "sim_card_id": 11,
+      "external_phone": "+70000001011",
+      "direction": "INCOMING",
+      "text": "Oh nice! Does the discount apply to new arrivals too?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-27 10:30:00+00",
+      "updated_at": "2026-03-27 10:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 99,
+      "sim_card_id": 11,
+      "external_phone": "+70000001011",
+      "direction": "OUTGOING",
+      "text": "Yes! All items including new arrivals are included in the sale.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-27 10:45:00+00",
+      "updated_at": "2026-03-27 10:45:00+00",
+      "gateway_task_id": "job-d11-2"
+    },
+    {
+      "id": 100,
+      "sim_card_id": 11,
+      "external_phone": "+70000001011",
+      "direction": "INCOMING",
+      "text": "Great, I will check the website tonight.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-27 11:00:00+00",
+      "updated_at": "2026-03-27 11:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 101,
+      "sim_card_id": 11,
+      "external_phone": "+70000001011",
+      "direction": "OUTGOING",
+      "text": "Reminder: sale ends this Sunday at midnight. Don't miss out!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-29 18:00:00+00",
+      "updated_at": "2026-03-29 18:00:00+00",
+      "gateway_task_id": "job-d11-3"
+    },
+    {
+      "id": 103,
+      "sim_card_id": 11,
+      "external_phone": "+70000001011",
+      "direction": "OUTGOING",
+      "text": "Awesome! Your order is confirmed. Thank you for shopping with us!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-30 20:15:00+00",
+      "updated_at": "2026-03-30 20:15:00+00",
+      "gateway_task_id": "job-d11-4"
+    },
+    {
+      "id": 104,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "INCOMING",
+      "text": "Привет! Ты уже смотрел новое коммерческое предложение?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-21 09:00:00+00",
+      "updated_at": "2026-03-21 09:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 105,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "OUTGOING",
+      "text": "Привет! Да, только что открыл. Выглядит интересно, надо обсудить.",
+      "status": "SENT_OK",
+      "error_text": null,
+      "created_at": "2026-03-21 09:20:00+00",
+      "updated_at": "2026-03-21 09:20:00+00",
+      "gateway_task_id": "job-d12-1"
+    },
+    {
+      "id": 106,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "INCOMING",
+      "text": "Когда тебе удобно созвониться сегодня?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-21 09:30:00+00",
+      "updated_at": "2026-03-21 09:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 107,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "OUTGOING",
+      "text": "Могу после 14:00. Тебе удобно?",
+      "status": "SENT_OK",
+      "error_text": null,
+      "created_at": "2026-03-21 09:45:00+00",
+      "updated_at": "2026-03-21 09:45:00+00",
+      "gateway_task_id": "job-d12-2"
+    },
+    {
+      "id": 108,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "INCOMING",
+      "text": "Да, в 14:30 созвонимся. Я скину ссылку на конференцию.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-21 09:50:00+00",
+      "updated_at": "2026-03-21 09:50:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 109,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "OUTGOING",
+      "text": "Отлично, договорились!",
+      "status": "SENT_OK",
+      "error_text": null,
+      "created_at": "2026-03-21 09:55:00+00",
+      "updated_at": "2026-03-21 09:55:00+00",
+      "gateway_task_id": "job-d12-3"
+    },
+    {
+      "id": 110,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "INCOMING",
+      "text": "Привет! Документы подписаны, отправил тебе на почту.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-02 11:00:00+00",
+      "updated_at": "2026-04-02 11:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 111,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "OUTGOING",
+      "text": "Получил, спасибо! Проверю и отвечу до конца дня.",
+      "status": "SENT_OK",
+      "error_text": null,
+      "created_at": "2026-04-02 11:30:00+00",
+      "updated_at": "2026-04-02 11:30:00+00",
+      "gateway_task_id": "job-d12-4"
+    },
+    {
+      "id": 112,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "INCOMING",
+      "text": "Отлично. Кстати, отчёт за март готов — проверь почту.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-09 14:00:00+00",
+      "updated_at": "2026-04-09 14:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 113,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "OUTGOING",
+      "text": "Увидел, изучу сегодня вечером. Завтра дам обратную связь.",
+      "status": "SENT_OK",
+      "error_text": null,
+      "created_at": "2026-04-09 14:30:00+00",
+      "updated_at": "2026-04-09 14:30:00+00",
+      "gateway_task_id": "job-d12-5"
+    },
+    {
+      "id": 114,
+      "sim_card_id": 12,
+      "external_phone": "+70000001012",
+      "direction": "INCOMING",
+      "text": "Окей, не тороплю. Удачи!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-09 14:35:00+00",
+      "updated_at": "2026-04-09 14:35:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 31,
+      "sim_card_id": 1,
+      "external_phone": "+70000001004",
+      "direction": "OUTGOING",
+      "text": "Добрый день! Направляем счёт №А-00781 на оплату услуг за март.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-03 09:00:00+00",
+      "updated_at": "2026-04-03 09:00:00+00",
+      "gateway_task_id": "job-d4-1"
+    },
+    {
+      "id": 32,
+      "sim_card_id": 1,
+      "external_phone": "+70000001004",
+      "direction": "INCOMING",
+      "text": "Добрый день! Получили счёт, передали в бухгалтерию.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-03 10:15:00+00",
+      "updated_at": "2026-04-03 10:15:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 33,
+      "sim_card_id": 1,
+      "external_phone": "+70000001004",
+      "direction": "OUTGOING",
+      "text": "Спасибо! Срок оплаты — до 10 апреля.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-03 10:30:00+00",
+      "updated_at": "2026-04-03 10:30:00+00",
+      "gateway_task_id": "job-d4-2"
+    },
+    {
+      "id": 34,
+      "sim_card_id": 1,
+      "external_phone": "+70000001004",
+      "direction": "INCOMING",
+      "text": "Уточните, пожалуйста, реквизиты для оплаты.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-04 09:00:00+00",
+      "updated_at": "2026-04-04 09:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 35,
+      "sim_card_id": 1,
+      "external_phone": "+70000001004",
+      "direction": "OUTGOING",
+      "text": "Реквизиты отправлены на вашу почту. Также можете скачать в личном кабинете.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-04 09:20:00+00",
+      "updated_at": "2026-04-04 09:20:00+00",
+      "gateway_task_id": "job-d4-3"
+    },
+    {
+      "id": 36,
+      "sim_card_id": 1,
+      "external_phone": "+70000001004",
+      "direction": "INCOMING",
+      "text": "Отлично, нашли. Оплатим до пятницы.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-04 11:00:00+00",
+      "updated_at": "2026-04-04 11:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 37,
+      "sim_card_id": 1,
+      "external_phone": "+70000001004",
+      "direction": "OUTGOING",
+      "text": "Оплата получена, спасибо! Закрывающие документы направим до конца недели.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-08 14:00:00+00",
+      "updated_at": "2026-04-08 14:00:00+00",
+      "gateway_task_id": "job-d4-4"
+    },
+    {
+      "id": 38,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "OUTGOING",
+      "text": "Ваш код подтверждения: 847291. Действителен 10 минут. Никому не сообщайте.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-17 08:00:00+00",
+      "updated_at": "2026-03-17 08:00:00+00",
+      "gateway_task_id": "job-d5-1"
+    },
+    {
+      "id": 39,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "INCOMING",
+      "text": "Спасибо, код получил.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-17 08:05:00+00",
+      "updated_at": "2026-03-17 08:05:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 40,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "OUTGOING",
+      "text": "Вход выполнен успешно. Добро пожаловать!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-17 08:06:00+00",
+      "updated_at": "2026-03-17 08:06:00+00",
+      "gateway_task_id": "job-d5-2"
+    },
+    {
+      "id": 41,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "OUTGOING",
+      "text": "Код подтверждения смены пароля: 392018. Действителен 5 минут.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-26 15:00:00+00",
+      "updated_at": "2026-03-26 15:00:00+00",
+      "gateway_task_id": "job-d5-3"
+    },
+    {
+      "id": 42,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "INCOMING",
+      "text": "Код не пришёл, можете отправить повторно?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-26 15:06:00+00",
+      "updated_at": "2026-03-26 15:06:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 43,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "OUTGOING",
+      "text": "Код отправлен повторно: 514730. Действителен 5 минут.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-26 15:07:00+00",
+      "updated_at": "2026-03-26 15:07:00+00",
+      "gateway_task_id": "job-d5-4"
+    },
+    {
+      "id": 44,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "INCOMING",
+      "text": "Получил, спасибо!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-26 15:08:00+00",
+      "updated_at": "2026-03-26 15:08:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 45,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "OUTGOING",
+      "text": "Пароль успешно изменён. Если это были не вы — обратитесь в поддержку.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-26 15:09:00+00",
+      "updated_at": "2026-03-26 15:09:00+00",
+      "gateway_task_id": "job-d5-5"
+    },
+    {
+      "id": 46,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "OUTGOING",
+      "text": "Код для подтверждения входа с нового устройства: 204953. Действителен 10 минут.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-06 10:00:00+00",
+      "updated_at": "2026-04-06 10:00:00+00",
+      "gateway_task_id": "job-d5-6"
+    },
+    {
+      "id": 47,
+      "sim_card_id": 3,
+      "external_phone": "+70000001005",
+      "direction": "INCOMING",
+      "text": "Подтвердил, всё в порядке.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-06 10:03:00+00",
+      "updated_at": "2026-04-06 10:03:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 48,
+      "sim_card_id": 4,
+      "external_phone": "+70000001006",
+      "direction": "OUTGOING",
+      "text": "Здравствуйте! Специальное предложение: скидка 25% на все услуги до конца недели.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-25 10:00:00+00",
+      "updated_at": "2026-03-25 10:00:00+00",
+      "gateway_task_id": "job-d6-1"
+    },
+    {
+      "id": 49,
+      "sim_card_id": 4,
+      "external_phone": "+70000001006",
+      "direction": "INCOMING",
+      "text": "Интересно! А на какие именно услуги распространяется скидка?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-25 10:30:00+00",
+      "updated_at": "2026-03-25 10:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 50,
+      "sim_card_id": 4,
+      "external_phone": "+70000001006",
+      "direction": "OUTGOING",
+      "text": "Скидка действует на весь каталог, кроме акционных товаров.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-25 10:45:00+00",
+      "updated_at": "2026-03-25 10:45:00+00",
+      "gateway_task_id": "job-d6-2"
+    },
+    {
+      "id": 51,
+      "sim_card_id": 4,
+      "external_phone": "+70000001006",
+      "direction": "INCOMING",
+      "text": "А промокод нужен или скидка применяется автоматически?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-25 11:00:00+00",
+      "updated_at": "2026-03-25 11:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 52,
+      "sim_card_id": 4,
+      "external_phone": "+70000001006",
+      "direction": "OUTGOING",
+      "text": "Промокод не нужен, скидка применяется автоматически при оформлении.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-25 11:10:00+00",
+      "updated_at": "2026-03-25 11:10:00+00",
+      "gateway_task_id": "job-d6-3"
+    },
+    {
+      "id": 53,
+      "sim_card_id": 4,
+      "external_phone": "+70000001006",
+      "direction": "INCOMING",
+      "text": "Отлично, спасибо! Оформлю заказ сегодня вечером.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-25 11:20:00+00",
+      "updated_at": "2026-03-25 11:20:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 54,
+      "sim_card_id": 4,
+      "external_phone": "+70000001006",
+      "direction": "OUTGOING",
+      "text": "Напоминаем: акция заканчивается завтра в 23:59!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-29 18:00:00+00",
+      "updated_at": "2026-03-29 18:00:00+00",
+      "gateway_task_id": "job-d6-4"
+    },
+    {
+      "id": 55,
+      "sim_card_id": 4,
+      "external_phone": "+70000001006",
+      "direction": "INCOMING",
+      "text": "Уже оформил заказ, спасибо за напоминание!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-29 18:30:00+00",
+      "updated_at": "2026-03-29 18:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 56,
+      "sim_card_id": 4,
+      "external_phone": "+70000001006",
+      "direction": "OUTGOING",
+      "text": "Заказ получен! Обработаем в течение рабочего дня.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-30 09:00:00+00",
+      "updated_at": "2026-03-30 09:00:00+00",
+      "gateway_task_id": "job-d6-5"
+    },
+    {
+      "id": 65,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "OUTGOING",
+      "text": "Здравствуйте! Ваш заказ №2210 успешно оформлен.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-19 09:00:00+00",
+      "updated_at": "2026-03-19 09:00:00+00",
+      "gateway_task_id": "job-d8-1"
+    },
+    {
+      "id": 66,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "INCOMING",
+      "text": "Здравствуйте! Уточните, пожалуйста, адрес доставки — я указал старый.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-19 09:30:00+00",
+      "updated_at": "2026-03-19 09:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 67,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "OUTGOING",
+      "text": "Конечно! Напишите новый адрес, мы обновим заказ.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-19 09:45:00+00",
+      "updated_at": "2026-03-19 09:45:00+00",
+      "gateway_task_id": "job-d8-2"
+    },
+    {
+      "id": 68,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "INCOMING",
+      "text": "Новый адрес: ул. Гагарина, д. 5, кв. 12, Москва.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-19 10:00:00+00",
+      "updated_at": "2026-03-19 10:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 1,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "OUTGOING",
+      "text": "Здравствуйте! Ваш заказ №4821 успешно оформлен и передан в обработку.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-27 09:00:00+00",
+      "updated_at": "2026-03-27 09:00:00+00",
+      "gateway_task_id": "job-d1-1"
+    },
+    {
+      "id": 2,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "INCOMING",
+      "text": "Добрый день! А когда примерно ожидать доставку?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-27 09:45:00+00",
+      "updated_at": "2026-03-27 09:45:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 3,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "OUTGOING",
+      "text": "Доставка запланирована на 29 марта, с 10:00 до 18:00.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-27 10:05:00+00",
+      "updated_at": "2026-03-27 10:05:00+00",
+      "gateway_task_id": "job-d1-2"
+    },
+    {
+      "id": 4,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "INCOMING",
+      "text": "Хорошо, спасибо! Можно уточнить адрес пункта выдачи?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-27 10:30:00+00",
+      "updated_at": "2026-03-27 10:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 5,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "OUTGOING",
+      "text": "Конечно! Пункт выдачи: ул. Ленина, д. 12, работает с 9:00 до 21:00.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-27 10:45:00+00",
+      "updated_at": "2026-03-27 10:45:00+00",
+      "gateway_task_id": "job-d1-3"
+    },
+    {
+      "id": 6,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "INCOMING",
+      "text": "Отлично, понял. А трек-номер посылки будет?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-28 08:15:00+00",
+      "updated_at": "2026-03-28 08:15:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 7,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "OUTGOING",
+      "text": "Трек-номер: EM449821RU. Отслеживание на сайте cdek.ru.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-28 08:30:00+00",
+      "updated_at": "2026-03-28 08:30:00+00",
+      "gateway_task_id": "job-d1-4"
+    },
+    {
+      "id": 8,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "INCOMING",
+      "text": "Проверил, посылка уже в вашем городе. Спасибо!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-29 11:00:00+00",
+      "updated_at": "2026-03-29 11:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 9,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "OUTGOING",
+      "text": "Отлично! Курьер свяжется с вами за час до доставки.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-29 11:15:00+00",
+      "updated_at": "2026-03-29 11:15:00+00",
+      "gateway_task_id": "job-d1-5"
+    },
+    {
+      "id": 10,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "INCOMING",
+      "text": "Получил заказ, всё в порядке. Спасибо за оперативность!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-29 16:40:00+00",
+      "updated_at": "2026-03-29 16:40:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 11,
+      "sim_card_id": 2,
+      "external_phone": "+70000001001",
+      "direction": "OUTGOING",
+      "text": "Рады помочь! Оставьте, пожалуйста, отзыв на нашем сайте.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-29 17:00:00+00",
+      "updated_at": "2026-03-29 17:00:00+00",
+      "gateway_task_id": "job-d1-6"
+    },
+    {
+      "id": 14,
+      "sim_card_id": 5,
+      "external_phone": "+70000001002",
+      "direction": "INCOMING",
+      "text": "Спасибо! Когда ожидать подтверждения?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-17 10:20:00+00",
+      "updated_at": "2026-03-17 10:20:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 79,
+      "sim_card_id": 9,
+      "external_phone": "+70000001009",
+      "direction": "INCOMING",
+      "text": "Добрый день! Могу ли я перенести встречу на 12:00?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-20 09:00:00+00",
+      "updated_at": "2026-03-20 09:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 125,
+      "sim_card_id": 3,
+      "external_phone": "+70000001014",
+      "direction": "INCOMING",
+      "text": "Отлично, спасибо! Есть ли у вас парковка?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-16 12:30:00+00",
+      "updated_at": "2026-03-16 12:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 126,
+      "sim_card_id": 3,
+      "external_phone": "+70000001014",
+      "direction": "OUTGOING",
+      "text": "Да, бесплатная парковка на 10 мест прямо у входа.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-16 12:45:00+00",
+      "updated_at": "2026-03-16 12:45:00+00",
+      "gateway_task_id": "job-d14-2"
+    },
+    {
+      "id": 127,
+      "sim_card_id": 3,
+      "external_phone": "+70000001014",
+      "direction": "OUTGOING",
+      "text": "Напоминаем о вашей брони сегодня в 19:00. Ждём вас!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-17 12:00:00+00",
+      "updated_at": "2026-03-17 12:00:00+00",
+      "gateway_task_id": "job-d14-3"
+    },
+    {
+      "id": 128,
+      "sim_card_id": 3,
+      "external_phone": "+70000001014",
+      "direction": "INCOMING",
+      "text": "Спасибо за напоминание! Будем вовремя.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-17 12:30:00+00",
+      "updated_at": "2026-03-17 12:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 129,
+      "sim_card_id": 4,
+      "external_phone": "+70000001015",
+      "direction": "OUTGOING",
+      "text": "Здравствуйте! Ваш заказ №0934 принят и передан на сборку.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-22 10:00:00+00",
+      "updated_at": "2026-03-22 10:00:00+00",
+      "gateway_task_id": "job-d15-1"
+    },
+    {
+      "id": 130,
+      "sim_card_id": 4,
+      "external_phone": "+70000001015",
+      "direction": "INCOMING",
+      "text": "Спасибо! А когда будет готов?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-22 10:30:00+00",
+      "updated_at": "2026-03-22 10:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 131,
+      "sim_card_id": 4,
+      "external_phone": "+70000001015",
+      "direction": "OUTGOING",
+      "text": "Заказ будет готов к отправке завтра.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-22 10:45:00+00",
+      "updated_at": "2026-03-22 10:45:00+00",
+      "gateway_task_id": "job-d15-2"
+    },
+    {
+      "id": 132,
+      "sim_card_id": 4,
+      "external_phone": "+70000001015",
+      "direction": "OUTGOING",
+      "text": "Заказ №0934 отправлен! Ожидайте доставку 24-25 марта.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-23 09:00:00+00",
+      "updated_at": "2026-03-23 09:00:00+00",
+      "gateway_task_id": "job-d15-3"
+    },
+    {
+      "id": 133,
+      "sim_card_id": 4,
+      "external_phone": "+70000001015",
+      "direction": "INCOMING",
+      "text": "Получил заказ, всё соответствует описанию. Спасибо!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-25 14:00:00+00",
+      "updated_at": "2026-03-25 14:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 134,
+      "sim_card_id": 4,
+      "external_phone": "+70000001015",
+      "direction": "OUTGOING",
+      "text": "Рады слышать! Специально для вас — скидка 15% на следующий заказ по промокоду СПАСИБО15.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-25 14:30:00+00",
+      "updated_at": "2026-03-25 14:30:00+00",
+      "gateway_task_id": "job-d15-4"
+    },
+    {
+      "id": 135,
+      "sim_card_id": 4,
+      "external_phone": "+70000001015",
+      "direction": "INCOMING",
+      "text": "О, спасибо! Обязательно воспользуюсь.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-25 15:00:00+00",
+      "updated_at": "2026-03-25 15:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 69,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "OUTGOING",
+      "text": "Адрес обновлён! Заказ передан в доставку, ожидайте 21-22 марта.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-19 10:15:00+00",
+      "updated_at": "2026-03-19 10:15:00+00",
+      "gateway_task_id": "job-d8-3"
+    },
+    {
+      "id": 70,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "OUTGOING",
+      "text": "Ваш заказ №2210 передан курьеру. Трек: RU8821049.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-21 08:00:00+00",
+      "updated_at": "2026-03-21 08:00:00+00",
+      "gateway_task_id": "job-d8-4"
+    },
+    {
+      "id": 71,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "INCOMING",
+      "text": "Спасибо! Курьер позвонит заранее?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-21 08:30:00+00",
+      "updated_at": "2026-03-21 08:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 72,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "OUTGOING",
+      "text": "Да, курьер позвонит за 30 минут до приезда.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-21 08:45:00+00",
+      "updated_at": "2026-03-21 08:45:00+00",
+      "gateway_task_id": "job-d8-5"
+    },
+    {
+      "id": 73,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "INCOMING",
+      "text": "Отлично, буду ждать дома.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-21 09:00:00+00",
+      "updated_at": "2026-03-21 09:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 74,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "OUTGOING",
+      "text": "Заказ №2210 доставлен. Спасибо за покупку!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-22 14:00:00+00",
+      "updated_at": "2026-03-22 14:00:00+00",
+      "gateway_task_id": "job-d8-6"
+    },
+    {
+      "id": 75,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "INCOMING",
+      "text": "Получил, всё отлично! Спасибо.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-22 15:00:00+00",
+      "updated_at": "2026-03-22 15:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 76,
+      "sim_card_id": 6,
+      "external_phone": "+70000001008",
+      "direction": "OUTGOING",
+      "text": "Рады слышать! Не забудьте оценить заказ в приложении.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-22 15:30:00+00",
+      "updated_at": "2026-03-22 15:30:00+00",
+      "gateway_task_id": "job-d8-7"
+    },
+    {
+      "id": 115,
+      "sim_card_id": 1,
+      "external_phone": "+70000001013",
+      "direction": "OUTGOING",
+      "text": "Hello! Your order #4492 has been confirmed and is being prepared.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-24 09:00:00+00",
+      "updated_at": "2026-03-24 09:00:00+00",
+      "gateway_task_id": "job-d13-1"
+    },
+    {
+      "id": 116,
+      "sim_card_id": 1,
+      "external_phone": "+70000001013",
+      "direction": "INCOMING",
+      "text": "Thanks! Could you let me know when it ships?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-24 09:30:00+00",
+      "updated_at": "2026-03-24 09:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 117,
+      "sim_card_id": 1,
+      "external_phone": "+70000001013",
+      "direction": "OUTGOING",
+      "text": "Of course! You will receive a text as soon as it is dispatched.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-24 09:45:00+00",
+      "updated_at": "2026-03-24 09:45:00+00",
+      "gateway_task_id": "job-d13-2"
+    },
+    {
+      "id": 118,
+      "sim_card_id": 1,
+      "external_phone": "+70000001013",
+      "direction": "OUTGOING",
+      "text": "Your order #4492 has been shipped! Tracking: GB991823RU.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-29 10:00:00+00",
+      "updated_at": "2026-03-29 10:00:00+00",
+      "gateway_task_id": "job-d13-3"
+    },
+    {
+      "id": 119,
+      "sim_card_id": 1,
+      "external_phone": "+70000001013",
+      "direction": "INCOMING",
+      "text": "Great, thanks for the update!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-29 10:30:00+00",
+      "updated_at": "2026-03-29 10:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 120,
+      "sim_card_id": 1,
+      "external_phone": "+70000001013",
+      "direction": "OUTGOING",
+      "text": "Your package is out for delivery today. Expected by 5pm.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-01 09:00:00+00",
+      "updated_at": "2026-04-01 09:00:00+00",
+      "gateway_task_id": "job-d13-4"
+    },
+    {
+      "id": 121,
+      "sim_card_id": 1,
+      "external_phone": "+70000001013",
+      "direction": "INCOMING",
+      "text": "Received it, everything is perfect. Thank you!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-01 15:00:00+00",
+      "updated_at": "2026-04-01 15:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 122,
+      "sim_card_id": 1,
+      "external_phone": "+70000001013",
+      "direction": "OUTGOING",
+      "text": "Wonderful! We hope to see you again soon.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-01 15:30:00+00",
+      "updated_at": "2026-04-01 15:30:00+00",
+      "gateway_task_id": "job-d13-5"
+    },
+    {
+      "id": 123,
+      "sim_card_id": 3,
+      "external_phone": "+70000001014",
+      "direction": "INCOMING",
+      "text": "Добрый день! Хотел бы забронировать столик на двоих на завтра в 19:00.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-16 12:00:00+00",
+      "updated_at": "2026-03-16 12:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 124,
+      "sim_card_id": 3,
+      "external_phone": "+70000001014",
+      "direction": "OUTGOING",
+      "text": "Добрый день! Столик на двоих на завтра в 19:00 забронирован. Ждём вас!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-16 12:20:00+00",
+      "updated_at": "2026-03-16 12:20:00+00",
+      "gateway_task_id": "job-d14-1"
+    },
+    {
+      "id": 136,
+      "sim_card_id": 4,
+      "external_phone": "+70000001015",
+      "direction": "OUTGOING",
+      "text": "Напоминаем: промокод действует до 10 апреля!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-03 10:00:00+00",
+      "updated_at": "2026-04-03 10:00:00+00",
+      "gateway_task_id": "job-d15-5"
+    },
+    {
+      "id": 137,
+      "sim_card_id": 4,
+      "external_phone": "+70000001015",
+      "direction": "INCOMING",
+      "text": "Уже оформил новый заказ с промокодом, спасибо!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-03 11:00:00+00",
+      "updated_at": "2026-04-03 11:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 138,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "OUTGOING",
+      "text": "Здравствуйте! Ваш заказ №5103 готов к выдаче. Адрес: ул. Ленина, 12.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-16 11:00:00+00",
+      "updated_at": "2026-03-16 11:00:00+00",
+      "gateway_task_id": "job-d16-1"
+    },
+    {
+      "id": 139,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "INCOMING",
+      "text": "Спасибо! В какое время работает пункт выдачи?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-16 11:30:00+00",
+      "updated_at": "2026-03-16 11:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 140,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "OUTGOING",
+      "text": "Пункт работает ежедневно с 9:00 до 21:00.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-16 11:45:00+00",
+      "updated_at": "2026-03-16 11:45:00+00",
+      "gateway_task_id": "job-d16-2"
+    },
+    {
+      "id": 141,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "INCOMING",
+      "text": "Отлично, заеду сегодня после работы.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-16 12:00:00+00",
+      "updated_at": "2026-03-16 12:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 142,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "OUTGOING",
+      "text": "Ждём вас! Не забудьте взять паспорт или код из SMS.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-16 12:10:00+00",
+      "updated_at": "2026-03-16 12:10:00+00",
+      "gateway_task_id": "job-d16-3"
+    },
+    {
+      "id": 143,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "INCOMING",
+      "text": "Забрал заказ, всё отлично! Спасибо.",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-03-16 19:30:00+00",
+      "updated_at": "2026-03-16 19:30:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 144,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "OUTGOING",
+      "text": "Рады помочь! Специальное предложение: скидка 20% на следующий заказ до конца месяца.",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-03-23 10:00:00+00",
+      "updated_at": "2026-03-23 10:00:00+00",
+      "gateway_task_id": "job-d16-4"
+    },
+    {
+      "id": 145,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "INCOMING",
+      "text": "Когда созвонимся сегодня, удобно в 15:00?",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-11 10:00:00+00",
+      "updated_at": "2026-04-11 10:00:00+00",
+      "gateway_task_id": null
+    },
+    {
+      "id": 146,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "OUTGOING",
+      "text": "Да, в 15:00 удобно. Созвонимся!",
+      "status": "DELIVERED",
+      "error_text": null,
+      "created_at": "2026-04-11 10:15:00+00",
+      "updated_at": "2026-04-11 10:15:00+00",
+      "gateway_task_id": "job-d16-5"
+    },
+    {
+      "id": 147,
+      "sim_card_id": 6,
+      "external_phone": "+70000001016",
+      "direction": "INCOMING",
+      "text": "Отлично, до встречи!",
+      "status": "RECEIVED",
+      "error_text": null,
+      "created_at": "2026-04-11 10:20:00+00",
+      "updated_at": "2026-04-11 10:20:00+00",
+      "gateway_task_id": null
+    }
+  ]
+}
